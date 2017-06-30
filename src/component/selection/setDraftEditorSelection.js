@@ -278,6 +278,9 @@ function addPointToSelection(
   }
   range.setStart(node, offset);
   selection.addRange(range);
+  if (selection.rangeCount === 0) {
+    selection.addRange(range);
+  }
 }
 
 module.exports = setDraftEditorSelection;
